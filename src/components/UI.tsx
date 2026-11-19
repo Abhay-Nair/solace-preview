@@ -1,0 +1,5 @@
+import type{ReactNode}from'react';import{Link}from'react-router-dom';import{ArrowUpRight}from'lucide-react';
+export function Section({eyebrow,title,description,children}: {eyebrow?:string;title:string;description?:string;children?:ReactNode}){return <section className="section"><div className="section-heading">{eyebrow&&<span className="eyebrow">{eyebrow}</span>}<h1>{title}</h1>{description&&<p className="muted">{description}</p>}</div>{children}</section>}
+export function Card({children,className=''}:{children:ReactNode;className?:string}){return <div className={`card ${className}`}>{children}</div>}
+export function FeatureLink({to,title,desc,icon}:{to:string;title:string;desc:string;icon:ReactNode}){return <Link className="feature-link" to={to}><span className="feature-icon">{icon}</span><span><strong>{title}</strong><small>{desc}</small></span><ArrowUpRight size={17} className="feature-arrow"/></Link>}
+export function Banner({children,type='info'}:{children:ReactNode;type?:'info'|'warn'}){return <div role="note" className={`banner ${type}`}>{children}</div>}
